@@ -242,7 +242,7 @@ void ttgamma3::SlaveBegin(TTree * tree)
   }
   if ( fSample != "" ) tmpfilename = fOutdir+outprefixfile+fSample+".root";
   else tmpfilename = fOutdir + outprefixfile+"data.root";
-  fFile = new TFile( tmpfilename, "RECREATE");
+  fFile = TFile::Open( tmpfilename, "RECREATE");
   //Info("SlaveBegin", "Output filename: %s", tmpfilename );
 
   TString hname = "_"+fSample;
